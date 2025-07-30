@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/Dockerfile">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Dockerfile" />
+              <option name="updatedContent" value="FROM nginx:alpine&#10;&#10;# Copy the static files to nginx html directory&#10;COPY src/ /usr/share/nginx/html/&#10;&#10;# Expose port 80&#10;EXPOSE 80&#10;&#10;# Start nginx&#10;CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker-compose.yml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/docker-compose.yml" />
+              <option name="updatedContent" value="version: '3.8'&#10;&#10;services:&#10;  snake-game:&#10;    build:&#10;      context: .&#10;      dockerfile: Dockerfile&#10;    ports:&#10;      - &quot;3000:80&quot;&#10;    volumes:&#10;      - ./src:/usr/share/nginx/html&#10;    restart: unless-stopped" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

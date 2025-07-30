@@ -3,34 +3,33 @@
         const container = document.createElement('div');
         container.classList.add('containerInput');
 
-        const el = document.createElement('input');
-        el.type = 'checkbox';
-        el.value = levelVariants[i].value;
-        el.classList.add("input");
-        el.checked = levelVariants[i].value === gameLevel;
-
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = String(speedLevelVariants[i].value);
+        input.classList.add("speedLevelInput");
+        input.checked = speedLevelVariants[i].value === gameLevel;
         const label = document.createElement('label');
         label.classList.add("label");
-        label.textContent = levelVariants[i].label;
+        label.textContent = speedLevelVariants[i].label;
 
-        container.append(label, el);
+        container.append(label, input);
         gameLevelContainer.appendChild(container);
     }
 })();
-function changeLevel(event){
+function changeSpeedLevel(event){
     gameLevel = event.target.value;
     const target = event.target;
     if(target.type === 'checkbox' )
-        for (const cb of inputs) {
+        for (const cb of speedLevelInputs) {
             if (cb !== target) {
                 cb.checked = false;
             }
         }
 
 }
-gameLevelContainer.addEventListener('click', changeLevel)
+gameLevelContainer.addEventListener('click', changeSpeedLevel)
 resetBtn.addEventListener('click',Reset)
-const inputs =   gameLevelContainer.querySelectorAll('.input')
+const speedLevelInputs =   gameLevelContainer.querySelectorAll('.speedLevelInput')
 
 function resetSnakeCoordinate(){
     snake = [snakeInitialCoordinates]
@@ -52,19 +51,19 @@ function drawBall(){
         ctx.clearRect(ballX,ballY,gridSize,gridSize);
     }
     [ballX,ballY] = getRandomGridCoordinate()
-    ctx.fillStyle='#06f106'
+    ctx.fillStyle='#ffffff'
     ctx.fillRect(ballX,ballY,gridSize-5,gridSize-5);
 }
-function drawSnake(isEaten){
+function drawSnake(eaten){
     const [tailX,tailY]  = snake[snake.length-1]
     const [headX,headY] = snake[0]
-    if(!isEaten){
+    if(!eaten){
         ctx.clearRect(tailX-1.5,tailY-1.5,gridSize+2,gridSize+2);
 
         snake.pop()
     }
-    ctx.fillStyle ='blueviolet'
-    ctx.strokeStyle='red'
+    ctx.fillStyle ='#1565c0'
+    ctx.strokeStyle='#13c3c3'
     ctx.fillRect(headX,headY,gridSize,gridSize);
     ctx.strokeRect(headX,headY,gridSize,gridSize);
 }
@@ -145,7 +144,7 @@ function Update(){
         resetText.innerText = `Only ${score} score? You can do better — go for a new high score! `
         resetContainer.append(resetText,resetBtn)
         root.appendChild(resetContainer)
-        inputs.forEach(elem => elem.removeAttribute('disabled'))
+        speedLevelInputs.forEach(elem => elem.removeAttribute('disabled'))
         return
     }
     moveSnake()
@@ -158,7 +157,7 @@ function onMove(e){
         root.removeChild(startModal)
     }
     if(!prev){
-        inputs.forEach(elem => {
+        speedLevelInputs.forEach(elem => {
            elem.setAttribute('disabled','true')
         })
     }

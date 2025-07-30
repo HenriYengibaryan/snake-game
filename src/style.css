@@ -2,23 +2,23 @@
     border: 1px solid black;
     width:  100%;
      height:  100%;
-     background-color: #5975a3;
+     background-color: #42a5f5;
      z-index: 0;
-     box-shadow: 1px 1px 4px 4px #5d42aa;
+     box-shadow: 1px 1px 4px 4px #d3e3e8;
 
  }
  .snakeHeader{
-     font-family: "Al Nile";
+     font-family: "sans-serif";
      font-size: 40px;
      font-weight:  bold;
-     color: #7d7dba
+     color: #fafafa
  }
  body{
     display: flex;
      justify-content: center;
      gap:20px;
      align-items: center;
-     background-color: #29355a;
+     background-color: #1565c0;
      z-index: 0;
      padding-left: 100px;
 
@@ -35,11 +35,11 @@
  #score{
      font-size: 35px;
      font-weight:  bold;
-     color: #706698
+     color: #ffffff
  }
  #resetDiv{
      z-index: 1000;
-     background-color: darkslateblue;
+     background-color: #1565c0;
      position : fixed;
      transform :translate(-50%, -50%);
      top:50%;
@@ -53,7 +53,7 @@
 
  }
  .resetText{
-     color:rgba(255, 222, 173, 0.61);
+     color: rgb(255, 255, 255);
      font-size: 20px;
      font-weight:  bold;
  }
@@ -62,8 +62,8 @@
      height: 50px;
      box-shadow: 1px 1px 1px 1px blueviolet ;
      border:none;
-     color: #5b5baa;
-     background-color: rgba(255, 222, 173, 0.61);
+     color: #ffffff;
+     background-color:#03a9f4;
      font-weight: bold;
      font-size: 20px;
  }
@@ -80,7 +80,7 @@
      width: 100px;
      justify-content: space-between;
  }
- .input{
+ .speedLevelInput{
      width: 20px;
      height: 20px;
      border-radius: 5px;
@@ -89,21 +89,21 @@
  .label{
      font-size: 20px;
      font-weight: 600;
-       color: #89acae;
+       color: #ffffff;
  ;
  }
  .titleOfLevel{
      width: 250px;
      line-height: 20px;
      font-size: 22px;
-     color:#89acae;
+     color: #ffffff;
      font-weight: 700;
      font-family: "sans-serif";
  }
  .startText{
      font-size: 25px;
      font-weight: normal;
-     color: cadetblue;
+     color: #f1f1f1;
      font-family: "sans-serif";
  }
  .startModal{
